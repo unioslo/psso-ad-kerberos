@@ -1,0 +1,18 @@
+# .NET
+bin/
+obj/
+*.user
+.vs/
+
+# Local config with secrets / environment specifics
+appsettings.Local.json
+appsettings.Production.json
+*.pfx
+*.pem
+*.key
+
+# Local test artefacts
+*.inf
+*.req
+*.cer
+*.der
