@@ -171,6 +171,22 @@ src/EnrollmentAgent/
   appsettings.json                sample config
 ```
 
+## Verifying commits
+
+Commits here are signed with the same SSH key that signs
+[keycloak-psso-extension](https://github.com/unioslo/keycloak-psso-extension), so the _Verified_
+badge GitHub shows on both repositories refers to one key. The public key is in
+[`allowed_signers`](allowed_signers) and is also served, independently of this repository, at
+https://api.github.com/users/oculos/ssh_signing_keys
+
+```
+$ git -c gpg.ssh.allowedSignersFile=allowed_signers log --show-signature -1
+Good "git" signature for franciaa@uio.no with RSA key SHA256:rSbAcdqbMIYLHmnh+0xocKuxBpAmTJbwTCd8yeJKk2E
+```
+
+`-n git` is the namespace Git uses for commit signatures; a bare `ssh-keygen -Y verify` needs it
+spelled out, which is why the `git log` form above is easier.
+
 ## License
 
 Copyright 2026 University of Oslo, Norway.
